@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Rusty Bargain — Tasación de Autos"
+  description: "Comparación de modelos de regresión para predecir el valor de mercado de autos usados."
+  repo-url: https://github.com/andagui-ds/rusty-bargain-car-price
+  repo-actions: [edit, issue]
+  
+  page-footer:
+    left: |
+      © 2025 **Andrés Aguirre** · [Volver al portafolio](https://andagui-ds.github.io/portfolio/)
+    right: |
+      [GitHub](https://github.com/andagui-ds/rusty-bargain-car-price)
+
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-summary: "🔍 Ver código Python"
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    back-to-top-navigation: true

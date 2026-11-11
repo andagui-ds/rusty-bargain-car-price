@@ -1,0 +1,82 @@
+---
+title: "Rusty Bargain: Tasación de Autos Usados"
+subtitle: "El equilibrio entre calidad predictiva y velocidad de producción"
+format:
+  html:
+    page-layout: article
+---
+
+## 🎯 El Problema de Negocio
+
+Rusty Bargain está desarrollando una aplicación para que los usuarios puedan tasar su coche rápidamente. Para que el modelo sea viable en producción, no basta con que sea preciso: debe ser **rápido entrenando** (para actualizar el modelo) y **rápido prediciendo** (para no hacer esperar al usuario en la app).
+
+El objetivo: predecir el precio de un auto usado minimizando el RMSE, pero vigilando el costo computacional.
+
+## 📊 Los Datos
+
+- **Fuente:** 354,369 registros iniciales.
+- **Limpieza:** Se eliminaron columnas irrelevantes (fechas, códigos postales) y valores atípicos (precios menores a 100 € o potencias irreales).
+- **Volumen final:** 305,018 registros limpios.
+- **Variables:** Marca, modelo, año, potencia, tipo de combustible, caja de cambios, etc.
+
+## 🧠 Enfoque
+
+Se evaluaron 6 algoritmos, desde un modelo lineal base hasta los *Gradient Boosting* más avanzados:
+1. Regresión Lineal (Prueba de cordura).
+2. Árbol de Decisión.
+3. Random Forest.
+4. **LightGBM**.
+5. CatBoost (con manejo nativo de categóricas).
+6. XGBoost.
+
+## 🏆 Resultados (Calidad vs. Velocidad)
+
+Aquí está el verdadero valor del análisis. No se trata solo del error, sino del tiempo:
+
+| Modelo | RMSE (€) | Tiempo de Entrenamiento (s) | Tiempo de Predicción (s) |
+| :--- | ---: | ---: | ---: |
+| **LightGBM** 🏆 | **1,630.02** | **1.96** | 0.31 |
+| Random Forest | 1,634.05 | 5.59 | 0.17 |
+| CatBoost | 1,674.79 | 51.70 | 0.17 |
+| XGBoost | 1,720.10 | 182.31 | 0.44 |
+| Árbol de Decisión | 1,911.18 | 0.57 | 0.01 |
+| Regresión Lineal | 2,950.17 | 0.04 | 0.002 |
+
+*(La Regresión Lineal confirma que la relación de los datos no es lineal, justificando el uso de árboles).*
+
+## ✅ Recomendación de Negocio
+
+**LightGBM es el ganador indiscutible.**
+Ofrece el mejor RMSE (1,630 €) y su tiempo de entrenamiento (1.96 s) es **26 veces más rápido que CatBoost** y **90 veces más rápido que XGBoost**. 
+
+Para Rusty Bargain, esto significa que pueden reentrenar el modelo constantemente sin gastar recursos excesivos, y ofrecer una latencia mínima en su aplicación web.
+
+## 🛠️ Stack Técnico
+
+::: {.grid}
+::: {.g-col-6 .g-col-md-3}
+**Lenguajes**
+
+Python
+:::
+::: {.g-col-6 .g-col-md-3}
+**Análisis**
+
+Pandas · NumPy
+:::
+::: {.g-col-6 .g-col-md-3}
+**ML**
+
+Scikit-learn · LightGBM · CatBoost · XGBoost
+:::
+::: {.g-col-6 .g-col-md-3}
+**Métricas**
+
+RMSE · Tiempos de ejecución
+:::
+:::
+
+## 🔗 Recursos
+
+- 📓 [Notebook completo con el análisis paso a paso](notebooks/analisis-rusty-bargain.ipynb){target="_blank"}
+- 💻 [Repositorio en GitHub](https://github.com/andagui-ds/rusty-bargain-car-price){target="_blank"}
