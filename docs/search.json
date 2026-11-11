@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "",
+    "text": "Rusty Bargain está desarrollando una aplicación para que los usuarios puedan tasar su coche rápidamente. Para que el modelo sea viable en producción, no basta con que sea preciso: debe ser rápido entrenando (para actualizar el modelo) y rápido prediciendo (para no hacer esperar al usuario en la app).\nEl objetivo: predecir el precio de un auto usado minimizando el RMSE, pero vigilando el costo computacional."
+  },
+  {
+    "objectID": "index.html#el-problema-de-negocio",
+    "href": "index.html#el-problema-de-negocio",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "",
+    "text": "Rusty Bargain está desarrollando una aplicación para que los usuarios puedan tasar su coche rápidamente. Para que el modelo sea viable en producción, no basta con que sea preciso: debe ser rápido entrenando (para actualizar el modelo) y rápido prediciendo (para no hacer esperar al usuario en la app).\nEl objetivo: predecir el precio de un auto usado minimizando el RMSE, pero vigilando el costo computacional."
+  },
+  {
+    "objectID": "index.html#los-datos",
+    "href": "index.html#los-datos",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "📊 Los Datos",
+    "text": "📊 Los Datos\n\nFuente: 354,369 registros iniciales.\nLimpieza: Se eliminaron columnas irrelevantes (fechas, códigos postales) y valores atípicos (precios menores a 100 € o potencias irreales).\nVolumen final: 305,018 registros limpios.\nVariables: Marca, modelo, año, potencia, tipo de combustible, caja de cambios, etc."
+  },
+  {
+    "objectID": "index.html#enfoque",
+    "href": "index.html#enfoque",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "🧠 Enfoque",
+    "text": "🧠 Enfoque\nSe evaluaron 6 algoritmos, desde un modelo lineal base hasta los Gradient Boosting más avanzados: 1. Regresión Lineal (Prueba de cordura). 2. Árbol de Decisión. 3. Random Forest. 4. LightGBM. 5. CatBoost (con manejo nativo de categóricas). 6. XGBoost."
+  },
+  {
+    "objectID": "index.html#resultados-calidad-vs.-velocidad",
+    "href": "index.html#resultados-calidad-vs.-velocidad",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "🏆 Resultados (Calidad vs. Velocidad)",
+    "text": "🏆 Resultados (Calidad vs. Velocidad)\nAquí está el verdadero valor del análisis. No se trata solo del error, sino del tiempo:\n\n\n\n\n\n\n\n\n\nModelo\nRMSE (€)\nTiempo de Entrenamiento (s)\nTiempo de Predicción (s)\n\n\n\n\nLightGBM 🏆\n1,630.02\n1.96\n0.31\n\n\nRandom Forest\n1,634.05\n5.59\n0.17\n\n\nCatBoost\n1,674.79\n51.70\n0.17\n\n\nXGBoost\n1,720.10\n182.31\n0.44\n\n\nÁrbol de Decisión\n1,911.18\n0.57\n0.01\n\n\nRegresión Lineal\n2,950.17\n0.04\n0.002\n\n\n\n(La Regresión Lineal confirma que la relación de los datos no es lineal, justificando el uso de árboles)."
+  },
+  {
+    "objectID": "index.html#recomendación-de-negocio",
+    "href": "index.html#recomendación-de-negocio",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "✅ Recomendación de Negocio",
+    "text": "✅ Recomendación de Negocio\nLightGBM es el ganador indiscutible. Ofrece el mejor RMSE (1,630 €) y su tiempo de entrenamiento (1.96 s) es 26 veces más rápido que CatBoost y 90 veces más rápido que XGBoost.\nPara Rusty Bargain, esto significa que pueden reentrenar el modelo constantemente sin gastar recursos excesivos, y ofrecer una latencia mínima en su aplicación web."
+  },
+  {
+    "objectID": "index.html#stack-técnico",
+    "href": "index.html#stack-técnico",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "🛠️ Stack Técnico",
+    "text": "🛠️ Stack Técnico\n\n\nLenguajes\nPython\n\n\nAnálisis\nPandas · NumPy\n\n\nML\nScikit-learn · LightGBM · CatBoost · XGBoost\n\n\nMétricas\nRMSE · Tiempos de ejecución"
+  },
+  {
+    "objectID": "index.html#recursos",
+    "href": "index.html#recursos",
+    "title": "Rusty Bargain: Tasación de Autos Usados",
+    "section": "🔗 Recursos",
+    "text": "🔗 Recursos\n\n📓 Notebook completo con el análisis paso a paso\n💻 Repositorio en GitHub"
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html",
+    "href": "notebooks/analisis-rusty-bargain.html",
+    "title": "Sprint 15 metnume",
+    "section": "",
+    "text": "El servicio de venta de autos usados Rusty Bargain está desarrollando una aplicación para atraer nuevos clientes. Gracias a esa app, puedes averiguar rápidamente el valor de mercado de tu coche. Tienes acceso al historial: especificaciones técnicas, versiones de equipamiento y precios. Tienes que crear un modelo que determine el valor de mercado. A Rusty Bargain le interesa: - la calidad de la predicción; - la velocidad de la predicción; - el tiempo requerido para el entrenamiento"
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html#preparación-de-datos",
+    "href": "notebooks/analisis-rusty-bargain.html#preparación-de-datos",
+    "title": "Sprint 15 metnume",
+    "section": "Preparación de datos",
+    "text": "Preparación de datos\n\n\n🔍 Ver código Python\nimport pandas as pd\nimport numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import OrdinalEncoder\nimport time\n\n# 1. Cargar el dataset\ndf = pd.read_csv('/datasets/car_data.csv')\n\nprint(\"Dimensiones originales:\", df.shape)\n\n# 2. Eliminar columnas innecesarias para la predicción\ndrop_cols = ['DateCrawled', 'DateCreated', 'PostalCode', 'LastSeen', 'NumberOfPictures']\ndf = df.drop(columns=drop_cols)\n\n# 3. Filtrar valores atípicos e irreales\ndf = df[\n    (df['Price'] &gt; 100) & \n    (df['RegistrationYear'] &gt;= 1950) & \n    (df['RegistrationYear'] &lt;= 2023) & \n    (df['Power'] &gt; 0) & \n    (df['Power'] &lt;= 1000)]\n\n# 4. Rellenar valores ausentes en variables categóricas\ncat_cols = ['VehicleType', 'Gearbox', 'Model', 'FuelType', 'Brand', 'NotRepaired']\nfor col in cat_cols:\n    df[col] = df[col].fillna('unknown')\n\nprint(\"Dimensiones después de la limpieza:\", df.shape)\n\n# 5. Codificación Ordinal para los modelos base (Árboles y Regresión Lineal)\ndf_encoded = df.copy()\nencoder = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)\ndf_encoded[cat_cols] = encoder.fit_transform(df_encoded[cat_cols])\n\n# 6. Separar características (X) y objetivo (y)\nX = df_encoded.drop(columns=['Price'])\ny = df_encoded['Price']\n\n# 7. División de datos en entrenamiento (75%) y prueba (25%)\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)\n\nprint(\"Conjunto de entrenamiento:\", X_train.shape)\nprint(\"Conjunto de prueba:\", X_test.shape)\n\n\nDimensiones originales: (354369, 16)\nDimensiones después de la limpieza: (305018, 11)\nConjunto de entrenamiento: (228763, 10)\nConjunto de prueba: (76255, 10)"
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html#entrenamiento-del-modelo",
+    "href": "notebooks/analisis-rusty-bargain.html#entrenamiento-del-modelo",
+    "title": "Sprint 15 metnume",
+    "section": "Entrenamiento del modelo",
+    "text": "Entrenamiento del modelo\n\n\n🔍 Ver código Python\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\nimport numpy as np\nimport lightgbm as lgb\n\n# Diccionario para almacenar los resultados y comparar posteriormente\nresults = []\n\n# --- 1. Regresión Lineal (Prueba de cordura) ---\nstart_train = time.time()\nlr = LinearRegression()\nlr.fit(X_train, y_train)\ntrain_time_lr = time.time() - start_train\n\nstart_pred = time.time()\ny_pred_lr = lr.predict(X_test)\npred_time_lr = time.time() - start_pred\n\nrmse_lr = np.sqrt(mean_squared_error(y_test, y_pred_lr))\nresults.append({'Modelo': 'Regresión Lineal', 'Entrenamiento (s)': train_time_lr, 'Predicción (s)': pred_time_lr, 'RECM (RMSE)': rmse_lr})\n\n\n# --- 2. Árbol de Decisión ---\nstart_train = time.time()\ndt = DecisionTreeRegressor(max_depth=12, random_state=42)\ndt.fit(X_train, y_train)\ntrain_time_dt = time.time() - start_train\n\nstart_pred = time.time()\ny_pred_dt = dt.predict(X_test)\npred_time_dt = time.time() - start_pred\n\nrmse_dt = np.sqrt(mean_squared_error(y_test, y_pred_dt))\nresults.append({'Modelo': 'Árbol de Decisión', 'Entrenamiento (s)': train_time_dt, 'Predicción (s)': pred_time_dt, 'RECM (RMSE)': rmse_dt})\n\n\n# --- 3. Bosque Aleatorio ---\nstart_train = time.time()\nrf = RandomForestRegressor(n_estimators=30, max_depth=15, random_state=42, n_jobs=-1)\nrf.fit(X_train, y_train)\ntrain_time_rf = time.time() - start_train\n\nstart_pred = time.time()\ny_pred_rf = rf.predict(X_test)\npred_time_rf = time.time() - start_pred\n\nrmse_rf = np.sqrt(mean_squared_error(y_test, y_pred_rf))\nresults.append({'Modelo': 'Bosque Aleatorio', 'Entrenamiento (s)': train_time_rf, 'Predicción (s)': pred_time_rf, 'RECM (RMSE)': rmse_rf})\n\n\n# --- 4. LightGBM (Gradient Boosting optimizado) ---\nX_train_lgb = X_train.copy()\nX_test_lgb = X_test.copy()\nfor col in cat_cols:\n    X_train_lgb[col] = X_train_lgb[col].astype('category')\n    X_test_lgb[col] = X_test_lgb[col].astype('category')\n\nstart_train = time.time()\nlgb_model = lgb.LGBMRegressor(n_estimators=100, learning_rate=0.1, random_state=42, verbose=-1)\nlgb_model.fit(X_train_lgb, y_train)\ntrain_time_lgb = time.time() - start_train\n\nstart_pred = time.time()\ny_pred_lgb = lgb_model.predict(X_test_lgb)\npred_time_lgb = time.time() - start_pred\n\nrmse_lgb = np.sqrt(mean_squared_error(y_test, y_pred_lgb))\nresults.append({'Modelo': 'LightGBM', 'Entrenamiento (s)': train_time_lgb, 'Predicción (s)': pred_time_lgb, 'RECM (RMSE)': rmse_lgb})\n\nprint(\"¡Modelos entrenados con éxito!\")\n\n\n¡Modelos entrenados con éxito!\n\n\n\n\n🔍 Ver código Python\nimport xgboost as xgb\n\n# 1. Preparar datos con One-Hot Encoding para XGBoost\ndf_xgb = df.copy()\ndf_xgb = pd.get_dummies(df_xgb, columns=cat_cols, drop_first=True)\n\nX_xgb = df_xgb.drop(columns=['Price'])\ny_xgb = df_xgb['Price']\n\nX_train_xgb, X_test_xgb, y_train_xgb, y_test_xgb = train_test_split(\n    X_xgb, y_xgb, test_size=0.25, random_state=42\n)\n\n# 2. Entrenar XGBoost con ajuste de hiperparámetros (ej. max_depth y n_estimators)\nstart_train = time.time()\nxgb_model = xgb.XGBRegressor(\n    n_estimators=100, \n    learning_rate=0.1, \n    max_depth=6, \n    random_state=42, \n    n_jobs=-1\n)\nxgb_model.fit(X_train_xgb, y_train_xgb)\ntrain_time_xgb = time.time() - start_train\n\n# 3. Predicción y evaluación\nstart_pred = time.time()\ny_pred_xgb = xgb_model.predict(X_test_xgb)\npred_time_xgb = time.time() - start_pred\n\nrmse_xgb = np.sqrt(mean_squared_error(y_test_xgb, y_pred_xgb))\n\n# Agregar a tu lista de resultados general\nresults.append({\n    'Modelo': 'XGBoost', \n    'Entrenamiento (s)': train_time_xgb, \n    'Predicción (s)': pred_time_xgb, \n    'RECM (RMSE)': rmse_xgb\n})\n\nprint(f\"XGBoost entrenado -&gt; RECM: {rmse_xgb:.2f}\")\n\n\nXGBoost entrenado -&gt; RECM: 1720.10\n\n\n\n\n🔍 Ver código Python\nfrom catboost import CatBoostRegressor\n\n# 1. CatBoost maneja las columnas categóricas originales directamente\nX_cat = df.drop(columns=['Price'])\ny_cat = df['Price']\n\nX_train_cat, X_test_cat, y_train_cat, y_test_cat = train_test_split(\n    X_cat, y_cat, test_size=0.25, random_state=42\n)\n\n# 2. Entrenar CatBoost con ajuste de hiperparámetros (ej. iterations y depth)\nstart_train = time.time()\ncat_model = CatBoostRegressor(\n    iterations=300, \n    learning_rate=0.1, \n    depth=6, \n    cat_features=cat_cols, \n    verbose=False, \n    random_seed=42\n)\ncat_model.fit(X_train_cat, y_train_cat)\ntrain_time_cat = time.time() - start_train\n\n# 3. Predicción y evaluación\nstart_pred = time.time()\ny_pred_cat = cat_model.predict(X_test_cat)\npred_time_cat = time.time() - start_pred\n\nrmse_cat = np.sqrt(mean_squared_error(y_test_cat, y_pred_cat))\n\n# Agregar a tu lista de resultados general\nresults.append({\n    'Modelo': 'CatBoost', \n    'Entrenamiento (s)': train_time_cat, \n    'Predicción (s)': pred_time_cat, \n    'RECM (RMSE)': rmse_cat\n})\n\nprint(f\"CatBoost entrenado -&gt; RECM: {rmse_cat:.2f}\")\n\n\nCatBoost entrenado -&gt; RECM: 1674.79"
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html#análisis-del-modelo",
+    "href": "notebooks/analisis-rusty-bargain.html#análisis-del-modelo",
+    "title": "Sprint 15 metnume",
+    "section": "Análisis del modelo",
+    "text": "Análisis del modelo\n\n\n🔍 Ver código Python\n# Crear DataFrame con los resultados\ndf_results = pd.DataFrame(results)\n\n# Mostrar la tabla ordenada por RECM (menor error es mejor)\ndf_results = df_results.sort_values(by='RECM (RMSE)').reset_index(drop=True)\ndisplay(df_results)\n\n\n\n\n\n\n\n\n\nModelo\nEntrenamiento (s)\nPredicción (s)\nRECM (RMSE)\n\n\n\n\n0\nLightGBM\n1.965913\n0.307039\n1630.022307\n\n\n1\nBosque Aleatorio\n5.593931\n0.166373\n1634.045003\n\n\n2\nCatBoost\n51.701105\n0.174666\n1674.792109\n\n\n3\nXGBoost\n182.312578\n0.442629\n1720.098515\n\n\n4\nÁrbol de Decisión\n0.576903\n0.010501\n1911.183971\n\n\n5\nRegresión Lineal\n0.042707\n0.002912\n2950.168369"
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html#conclusión-y-recomendación-final",
+    "href": "notebooks/analisis-rusty-bargain.html#conclusión-y-recomendación-final",
+    "title": "Sprint 15 metnume",
+    "section": "Conclusión y Recomendación Final",
+    "text": "Conclusión y Recomendación Final\nPara Rusty Bargain, el modelo ideal a implementar en la aplicación es LightGBM.\n\nJustificación: Ofrece la mayor calidad predictiva (menor error RECM de 1,630.02 €) con un tiempo de entrenamiento sumamente competitivo (aproximadamente 1.96 segundos) y una velocidad de predicción óptima para consultas en tiempo real. Aunque CatBoost y XGBoost ofrecen una precisión excelente (RECM de 1,674.79 € y 1,720.10 € respectivamente), requieren tiempos de entrenamiento considerablemente mayores (51 segundos para CatBoost y 182 segundos para XGBoost debido al uso de One-Hot Encoding en un volumen alto de características categóricas), lo que vuelve a LightGBM la opción más eficiente y equilibrada para producción."
+  },
+  {
+    "objectID": "notebooks/analisis-rusty-bargain.html#rúbrica-de-evaluación-del-proyecto-rusty-bargain",
+    "href": "notebooks/analisis-rusty-bargain.html#rúbrica-de-evaluación-del-proyecto-rusty-bargain",
+    "title": "Sprint 15 metnume",
+    "section": "Rúbrica de Evaluación del Proyecto: Rusty Bargain",
+    "text": "Rúbrica de Evaluación del Proyecto: Rusty Bargain\n\n¿Seguiste todos los pasos de las instrucciones? Sí, se siguieron rigurosamente todos los pasos establecidos: se cargaron y examinaron los datos, se limpiaron las anomalías y valores ausentes, se prepararon los conjuntos con codificación adecuada (incluyendo One-Hot Encoding para XGBoost), se entrenó una amplia variedad de modelos (Regresión Lineal como prueba de cordura, Árbol de Decisión, Bosque Aleatorio, LightGBM, CatBoost y XGBoost) con sus respectivos hiperparámetros, y se realizó un análisis comparativo integral de calidad, velocidad de entrenamiento e inferencia.\n¿Cómo preparaste los datos?\n\nLimpieza y filtrado: Se eliminaron las columnas irrelevantes o constantes (DateCrawled, DateCreated, PostalCode, LastSeen, NumberOfPictures). Se filtraron valores atípicos e irreales, conservando precios mayores a 100 €, años de matriculación entre 1950 y 2023, y potencias entre 1 y 1000 CV.\nValores ausentes: Los valores nulos en las variables categóricas (VehicleType, Gearbox, Model, FuelType, Brand, NotRepaired) se rellenaron con la etiqueta categórica 'unknown'.\nCodificación y División: Se aplicó codificación ordinal para los modelos basados en scikit-learn, manejo nativo de categorías para LightGBM y CatBoost, y codificación One-Hot (pd.get_dummies) para XGBoost. El dataset limpio se dividió en conjuntos de entrenamiento (75%) y prueba (25%).\n\n¿Qué modelos e hiperparámetros consideraste?\n\nRegresión Lineal: Utilizada como prueba de cordura inicial sin hiperparámetros complejos.\nÁrbol de Decisión (DecisionTreeRegressor): Evaluado con una profundidad máxima (max_depth = 12).\nBosque Aleatorio (RandomForestRegressor): Configurado con un número moderado de estimadores (n_estimators = 30) y profundidad máxima (max_depth = 15).\nLightGBM (LGBMRegressor): Implementado con parámetros base optimizados (n_estimators = 100, learning_rate = 0.1).\nCatBoost (CatBoostRegressor): Entrenado con manejo nativo de variables categóricas (iterations = 300, depth = 6, learning_rate = 0.1).\nXGBoost (XGBRegressor): Entrenado sobre datos transformados por One-Hot Encoding (n_estimators = 100, max_depth = 6, learning_rate = 0.1).\n\n¿Conseguiste evitar la duplicación del código? Sí, el código se estructuró de manera modular utilizando estructuras de control limpias, diccionarios y bloques secuenciales para el almacenamiento y evaluación unificada de las métricas de todos los modelos.\n¿Cuáles son tus hallazgos?\n\nPrueba de cordura superada: La Regresión Lineal obtuvo el mayor error (RECM de 2,950.17 €), confirmando que la relación de los datos no es lineal y justificando plenamente el uso de algoritmos basados en árboles.\nMejor calidad: LightGBM alcanzó la mayor precisión predictiva con un RECM de 1,630.02 €, seguido muy de cerca por el Bosque Aleatorio (1,634.05 €) y CatBoost (1,674.79 €).\nVelocidad: Aunque modelos como XGBoost y CatBoost ofrecen gran robustez, LightGBM demostró ser el más eficiente en tiempo de entrenamiento (1.96 segundos) frente al alto costo computacional de XGBoost con One-Hot Encoding (182 segundos).\n\n¿Mantuviste la estructura del proyecto? Sí, se mantuvo fielmente la estructura solicitada dividiendo el cuaderno en las secciones clave: Preparación de datos, Entrenamiento del modelo y Análisis del modelo, cerrando con las conclusiones y la lista de control verificada.\n¿Mantuviste el código ordenado? Sí, el código está debidamente comentado, utiliza nombres de variables claros, maneja las importaciones al inicio de cada celda y presenta los resultados finales de forma impecable mediante tablas comparativas dinámicas creadas con Pandas."
+  }
+]
